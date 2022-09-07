@@ -1,0 +1,47 @@
+= kbd.kak
+:keycodes-link: https://github.com/kmonad/kmonad/blob/master/src/KMonad/Keyboard/Keycode.hs
+
+Kakoune filetype plugin for Kmonad's kbd config files.
+
+Simply clone into your kakoune config directory and source.
+
+Adds extra word chars used in lisp/scheme highlighters.
+Only sure that - can be used in identifiers, etc.
+Also includes _, *, +, others.
+
+Has highlighting for most keywords.
+Let me know if there's any missing with an issue.
+
+Does not include highlight for alias usage (`@alias`),
+since I feel like it detracts from other (potential) re-mappings.
+You can un-comment it if you'd like.
+
+Let me know with an issue if I've used the wrong faces/structure.
+This is only the third highlighter I've ever created,
+and I don't know much.
+
+== Other Highlighters
+
+Vim Highlighter: https://github.com/kmonad/kmonad-vim
+
+Emacs Highlighter: https://github.com/kmonad/kbd-mode
+
+== TODO
+
+* highlight for alias definitions
+** appears inside defalias block as every other argument
+** add to 'defalias' region?
+* highlight correct key usage
+** inside defsrc/deflayer block
+** see {keycodes-link}[Keycode.hs] for list of keys.
+   from tutorial.kbd:
+
+     Every Keycode has a name corresponding to its Keycode name, but
+     all lower-case and with the 'Key' prefix removed. There are also
+     various aliases for Keycodes starting around line 350.
+
+** add to 'defsrc'/'deflayer' region?
+* highlight layer name
+** appears after deflayer
+* check and apply plug.kak best practices
+** add readme section on plugging
